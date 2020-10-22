@@ -43,5 +43,7 @@ namespace AutoGladiators
         void EquipRight(object weapon);
 
         void EquipTwoHanded(object weapon);
+
+        void EquipArmour(object armour);
     }
 }

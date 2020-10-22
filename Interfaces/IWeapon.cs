@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AutoGladiators
 {
-    interface IWeapon
+    interface IWeapon : IItem
     {
     }
 }
