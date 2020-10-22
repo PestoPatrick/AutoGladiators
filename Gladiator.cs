@@ -19,10 +19,12 @@ namespace AutoGladiators
         public int BaseAgility { get; set; }
 
         public object armour { get; set; }
-
+        public object Armour { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public object leftHand { get; set; }
-
         public object rightHand { get; set; }
+        public int TotalAttack { get; set; }
+        public int TotalDefence { get; set; }
+        public int TotalAgility { get; set; }
 
         public void Attack()
         {
