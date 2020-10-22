@@ -8,6 +8,7 @@ namespace AutoGladiators
     {
         string Id { get; set; }
         string Name { get; set; }
+        int Energy { get; set; }
         int Experience { get; set; }
         int BaseHealth { get; set; }
 
@@ -17,7 +18,7 @@ namespace AutoGladiators
 
         int BaseAgility { get; set; }
 
-        int TotalAttack { get; set; }
+        int TotalStrength { get; set; }
 
         int TotalDefence { get; set; }
 
@@ -25,14 +26,22 @@ namespace AutoGladiators
 
         object Armour { get; set; }
 
-        object leftHand { get; set; }
+        object LeftHand { get; set; }
 
-        object rightHand { get; set; }
+        object RightHand { get; set; }
+
+        object TwoHanded { get; set; }
 
         void Attack();
 
         void Dodge();
 
         void Defend();
+
+        void EquipLeft(object weapon);
+
+        void EquipRight(object weapon);
+
+        void EquipTwoHanded(object weapon);
     }
 }
