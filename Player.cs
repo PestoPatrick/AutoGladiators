@@ -8,7 +8,7 @@ namespace AutoGladiators
     {
         public object[] gladiators { get; set; }
 
-        public int coin { get; set; }
+        public int money { get; set; }
 
         public object[] inventory { get; set; }
     }
