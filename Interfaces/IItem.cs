@@ -7,14 +7,13 @@ namespace AutoGladiators
 {
     interface IItem
     {
-        string id { get; set; }
+        string Id { get; set; }
+        string Name { get; set; }
+        string Description { get; set; }
+        bool IsEquipped { get; set; }
+        string Type { get; set; }
 
-        string name { get; set; }
-
-        string description { get; set; }
-
-        bool isEquipped { get; set; }
-
+        
 
     }
 }

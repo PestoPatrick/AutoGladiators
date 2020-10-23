@@ -6,10 +6,10 @@ namespace AutoGladiators
 {
     class Player
     {
-        public object[] gladiators { get; set; }
+        public Gladiator Gladiator { get; set; }
 
-        public int money { get; set; }
+        public int Money { get; set; }
 
-        public object[] inventory { get; set; }
+        public object[] Inventory { get; set; }
     }
 }

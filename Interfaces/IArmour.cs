@@ -6,6 +6,8 @@ namespace AutoGladiators
 {
     interface IArmour : IItem
     {
-        
+             
+        int Defence { get; set; }
+        float Weight { get; set; }
     }
 }

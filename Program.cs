@@ -8,8 +8,10 @@ namespace AutoGladiators
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            Weapon bronzesword = new Weapon();
             Gladiator gladiator = new Gladiator("Maximus");
-            Console.WriteLine(gladiator.ToString());
+            gladiator.EquipTwoHanded(bronzesword);
+            Console.WriteLine(gladiator.TotalAttack);
 
         }
     }

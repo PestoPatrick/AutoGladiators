@@ -7,6 +7,7 @@ namespace AutoGladiators
     interface IGladiator
     {
         string Id { get; set; }
+        int Level { get; set; }
         string Name { get; set; }
         int Energy { get; set; }
         int Experience { get; set; }
@@ -18,32 +19,32 @@ namespace AutoGladiators
 
         int BaseAgility { get; set; }
 
-        int TotalStrength { get; set; }
+        int TotalAttack { get; set; }
 
         int TotalDefence { get; set; }
 
         int TotalAgility { get; set; }
 
-        object Armour { get; set; }
+        Armour Armour { get; set; }
 
-        object LeftHand { get; set; }
+        Weapon LeftHand { get; set; }
 
-        object RightHand { get; set; }
+        Weapon RightHand { get; set; }
 
-        object TwoHanded { get; set; }
+        Weapon TwoHanded { get; set; }
 
-        void Attack();
+        void Attack(Gladiator enemy);
 
         void Dodge();
 
         void Defend();
 
-        void EquipLeft(object weapon);
+        void EquipLeft(Weapon weapon);
 
-        void EquipRight(object weapon);
+        void EquipRight(Weapon weapon);
 
-        void EquipTwoHanded(object weapon);
+        void EquipTwoHanded(Weapon weapon);
 
-        void EquipArmour(object armour);
+        void EquipArmour(Armour armour);
     }
 }

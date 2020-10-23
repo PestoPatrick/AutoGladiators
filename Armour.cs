@@ -6,9 +6,12 @@ namespace AutoGladiators
 {
     class Armour : IArmour
     {
-        public bool isEquipped { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string description { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool IsEquipped { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public int Defence { get; set; }
+        public string Type { get; set; }
+        public float Weight { get; set; }
     }
 }
