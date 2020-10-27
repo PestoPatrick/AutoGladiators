@@ -34,6 +34,10 @@ namespace AutoGladiators
             this.BaseAgility = 5;
             this.TotalAttack = BaseStrength;
             this.Inventory = new List<object>();
+            this.Armour = new Armour();
+            this.LeftHand = null;
+            this.RightHand = null;
+            this.TwoHanded = null;
         }
         public void Attack(Gladiator enemy)
         {
@@ -54,8 +58,8 @@ namespace AutoGladiators
         {
             if (TwoHanded != null)
             {
-                TwoHanded = null;
                 TwoHanded.IsEquipped = false;
+                TwoHanded = null;
             }
             LeftHand = weapon;
             weapon.IsEquipped = true;
@@ -66,9 +70,8 @@ namespace AutoGladiators
         {
             if (this.TwoHanded != null)
             {
-                this.TwoHanded = null;
-                
                 this.TwoHanded.IsEquipped = false;
+                this.TwoHanded = null;
             }
             this.RightHand = weapon;
             weapon.IsEquipped = true;
@@ -108,5 +111,34 @@ namespace AutoGladiators
             this.TotalDefence += armour.Defence;
         }
 
+        public void UnEquipArmour(Armour armour)
+        {
+            armour.IsEquipped = false;
+            TotalDefence -= armour.Defence;
+        }
+
+        public void UnEquipLeftWeapon(Weapon weapon)
+        {
+            if (LeftHand == null) return;
+            weapon.IsEquipped = false;
+            TotalAttack -= weapon.Attack;
+            LeftHand = null;
+        }
+        
+        public void UnEquipRightWeapon(Weapon weapon)
+        {
+            
+            if (RightHand == null) return;
+            weapon.IsEquipped = false;
+            TotalAttack -= weapon.Attack;
+            RightHand = null;
+        }
+        public void UnEquipTwoHandedWeapon(Weapon weapon)
+        {
+            if (TwoHanded == null) return;
+            weapon.IsEquipped = false;
+            TotalAttack -= weapon.Attack;
+            TwoHanded = null;
+        }
     }
 }

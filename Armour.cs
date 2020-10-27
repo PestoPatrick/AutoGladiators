@@ -12,6 +12,7 @@ namespace AutoGladiators
         public string Description { get; set; }
         public int Defence { get; set; }
         public string Type { get; set; }
+        public int Value { get; set; }
         public float Weight { get; set; }
     }
 }
