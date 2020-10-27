@@ -14,5 +14,6 @@ namespace AutoGladiators
         public string Description { get; set; }
         public bool IsEquipped { get; set; }
         public string Type { get; set; }
+        public int Value { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

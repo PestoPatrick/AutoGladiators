@@ -12,7 +12,6 @@ namespace AutoGladiators
             Gladiator gladiator = new Gladiator("Maximus");
             gladiator.EquipTwoHanded(bronzesword);
             Console.WriteLine(gladiator.TotalAttack);
-
         }
     }
 }

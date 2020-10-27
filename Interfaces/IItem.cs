@@ -12,6 +12,7 @@ namespace AutoGladiators
         string Description { get; set; }
         bool IsEquipped { get; set; }
         string Type { get; set; }
+        int Value { get; set; }
 
         
 

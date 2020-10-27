@@ -16,13 +16,15 @@ namespace AutoGladiators
         public int BaseStrength { get; set; }
         public int BaseDefence { get; set; }
         public int BaseAgility { get; set; }
+        public int TotalAttack { get; set; }
+        public int TotalAgility { get; set; }
+        public int TotalDefence { get; set; }
+        public int Money { get; set; }
         public Armour Armour { get; set; }
         public Weapon LeftHand { get; set; }
         public Weapon RightHand { get; set; }
         public Weapon TwoHanded { get; set; }
-        public int TotalAttack { get; set; }
-        public int TotalDefence { get; set; }
-        public int TotalAgility { get; set; }
+        public List<object> Inventory { get; set; }
 
         public Gladiator(string name)
         {
@@ -31,6 +33,7 @@ namespace AutoGladiators
             this.BaseDefence = 5;
             this.BaseAgility = 5;
             this.TotalAttack = BaseStrength;
+            this.Inventory = new List<object>();
         }
         public void Attack(Gladiator enemy)
         {
