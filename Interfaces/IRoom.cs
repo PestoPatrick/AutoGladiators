@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AutoGladiators
+namespace AutoGladiators.Interfaces
 {
     interface IRoom
     {

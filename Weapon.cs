@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using AutoGladiators.Interfaces;
 
 namespace AutoGladiators
 {
-    class Weapon : IWeapon
+    class Weapon : IItem
     {
         public int Attack { get; set; }
         public float AttackSpeed { get; set; }
@@ -14,18 +15,21 @@ namespace AutoGladiators
         public string Description { get; set; }
         public bool IsEquipped { get; set; }
         public string Type { get; set; }
-        public int Value { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Value { get; set; }
+        public int Defence { get; set; }
 
         public Weapon()
         {
             Id = "9890jhjhjk423hukhgyt8";
             Attack = 3;
             AttackSpeed = 0.8F;
+            Defence = 0;
             Level = 1;
             Name = "Bronze Longsword";
             Description = "A bronze longsword for use by the beginner gladiator";
             IsEquipped = false;
-            Type = "Bronze";
+            Type = "OneHanded";
+            Value = 25;
         }
     }
 }

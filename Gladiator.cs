@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using AutoGladiators.Interfaces;
 
 namespace AutoGladiators
 {
@@ -15,9 +16,9 @@ namespace AutoGladiators
         public int BaseHealth { get; set; }
         public int BaseStrength { get; set; }
         public int BaseDefence { get; set; }
-        public int BaseAgility { get; set; }
+        public float BaseAgility { get; set; }
         public int TotalAttack { get; set; }
-        public int TotalAgility { get; set; }
+        public float TotalAgility { get; set; }
         public int TotalDefence { get; set; }
         public int Money { get; set; }
         public Armour Armour { get; set; }
@@ -56,6 +57,7 @@ namespace AutoGladiators
 
         public void EquipLeft(Weapon weapon)
         {
+            if (weapon.Type != "OneHanded") return;
             if (TwoHanded != null)
             {
                 TwoHanded.IsEquipped = false;
@@ -68,6 +70,7 @@ namespace AutoGladiators
 
         public void EquipRight(Weapon weapon)
         {
+            if (weapon.Type != "OneHanded") return;
             if (this.TwoHanded != null)
             {
                 this.TwoHanded.IsEquipped = false;
@@ -84,6 +87,7 @@ namespace AutoGladiators
         {
             // set the weapons to unequipped maybe not needed
             //Decrease total attack by the attack of the weapon
+            if (weapon.Type != "TwoHanded") return;
             if (this.LeftHand != null)
             {
                 this.LeftHand.IsEquipped = false;
@@ -115,6 +119,7 @@ namespace AutoGladiators
         {
             armour.IsEquipped = false;
             TotalDefence -= armour.Defence;
+            TotalAgility -= armour.AttackSpeed;
         }
 
         public void UnEquipLeftWeapon(Weapon weapon)

@@ -11,6 +11,8 @@ namespace AutoGladiators
             Console.WriteLine("Hello World!");
             Weapon bronzeSword = new Weapon();
             Gladiator gladiator = new Gladiator("Maximus");
+            Shop shop = new Shop();
+            
             
             gladiator.EquipLeft(bronzeSword);
             Console.WriteLine(gladiator.TotalAttack);
@@ -19,6 +21,10 @@ namespace AutoGladiators
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(gladiator.TotalAttack.ToString());
             sb.AppendLine($"The {bronzeSword.Name} is not equipped {bronzeSword.IsEquipped.ToString()}");
+            
+            shop.Inventory.Add(bronzeSword);
+            shop.DisplayItems();
+            
             
             Console.WriteLine(sb);
         }

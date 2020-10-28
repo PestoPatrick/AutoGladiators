@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AutoGladiators
+﻿namespace AutoGladiators.Interfaces
 {
     interface IGladiator
     {
@@ -17,13 +13,13 @@ namespace AutoGladiators
 
         int BaseDefence { get; set; }
 
-        int BaseAgility { get; set; }
+        float BaseAgility { get; set; }
 
         int TotalAttack { get; set; }
 
         int TotalDefence { get; set; }
 
-        int TotalAgility { get; set; }
+        float TotalAgility { get; set; }
 
         Armour Armour { get; set; }
 
