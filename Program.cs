@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Text;
 
-
 namespace AutoGladiators
 {
     class Program
     {
         static void Main(string[] args)
         {
+            //import database data first here
             Console.WriteLine("Hello World!");
             Weapon bronzeSword = new Weapon();
             Gladiator gladiator = new Gladiator("Maximus");
