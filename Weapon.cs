@@ -20,7 +20,7 @@ namespace AutoGladiators
 
         public Weapon()
         {
-            Id = "9890jhjhjk423hukhgyt8";
+            Id = "1";
             Attack = 3;
             AttackSpeed = 0.8F;
             Defence = 0;

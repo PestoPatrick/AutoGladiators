@@ -20,17 +20,17 @@ namespace AutoGladiators
         }
         public void DisplayItems()
         {
-            var table = new ConsoleTable("Name", "Attack", "Attack Speed", "Defence", "Type", "Cost");
+            var table = new ConsoleTable("ID","Name", "Attack", "Attack Speed", "Defence", "Type", "Cost");
             
             foreach (dynamic item in Inventory )
             {
                 Type itemType = item.GetType();
                 if (itemType == typeof(Weapon))
                 {
-                    table.AddRow(item.Name,item.Attack,item.AttackSpeed,0,item.Type,item.Value);
+                    table.AddRow(item.Id,item.Name,item.Attack,item.AttackSpeed,item.Defence,item.Type,item.Value);
                 } else if (itemType == typeof(Armour))
                 {
-                    table.AddRow(item.Name, 0, 0, item.Defence, item.Type, item.Value);
+                    table.AddRow(item.Id,item.Name, item.Attack, item.AttackSpeed, item.Defence, item.Type, item.Value);
                 }
             
             }
