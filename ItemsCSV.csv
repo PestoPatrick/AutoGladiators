@@ -1,0 +1,9 @@
+1,Dagger,1,A generic steel Dagger. Fast but weak.,0,OneHanded,5,1,1.8,0
+2,Shortsword,3,A generic steel Shortsword. Low attack power but fast.,0,OneHanded,25,3,1.5,0
+3,Longsword,5,A generic steel Longsword.,0,OneHanded,50,5,1.1,0
+4,Greatsword,5,A generic steel Greatsword. A strong two-handed weapon but slow.,0,TwoHanded,100,8,0.8,0
+5,War-Axe,5,A generic steel War-Axe. Slower than a Shortsword but more powerful.,0,OneHanded,25,4,1.2,0
+6,Battleaxe,5,A generic steel Battleaxe. Slower than a Greatsword but more powerful.,0,TwoHanded,100,10,0.6,0
+7,Leather Armour,1,Basic leather armour for the beginner gladiator.,0,Armour,5,0,-0.4,5
+8,Hide Armour,3,Stronger than Leather Armour but slower.,0,Armour,15,0,-0.6,7
+9,Plate Armour,5,Stronger than Hide Armour but slower.,0,Armour,15,0,-0.8,9
