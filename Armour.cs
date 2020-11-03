@@ -5,7 +5,7 @@ using AutoGladiators.Interfaces;
 
 namespace AutoGladiators
 {
-    class Armour : IItem
+    public class Armour : IItem
     {
         public bool IsEquipped { get; set; }
         public string Id { get; set; }

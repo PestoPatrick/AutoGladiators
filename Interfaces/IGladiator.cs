@@ -8,6 +8,7 @@
         int Energy { get; set; }
         int Experience { get; set; }
         int BaseHealth { get; set; }
+        int TotalHealth { get; set; }
 
         int BaseStrength { get; set; }
 

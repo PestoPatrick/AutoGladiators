@@ -5,7 +5,7 @@ using AutoGladiators.Interfaces;
 
 namespace AutoGladiators
 {
-    class Weapon : IItem
+    public class Weapon : IItem
     {
         public int Attack { get; set; }
         public float AttackSpeed { get; set; }

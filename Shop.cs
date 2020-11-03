@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Security.Cryptography;
-using System.Text;
 using AutoGladiators.Interfaces;
 using ConsoleTables;
 
@@ -12,35 +10,36 @@ namespace AutoGladiators
         public string Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public List<object> Inventory { get; set; }
+        public List<DbItems> Inventory { get; set; }
 
-        public Shop()
+        public Shop(List<DbItems> items)
         {
-            Inventory = new List<object>();
+            Id = "01A";
+            Name = "Jeff's Shop for Gladiators";
+            Description =
+                "A shop that has everything a beginner gladiator needs to increase their chance of surviving the arena.";
+            Inventory = items;
         }
+
         public void DisplayItems()
         {
-            var table = new ConsoleTable("ID","Name", "Attack", "Attack Speed", "Defence", "Type", "Cost");
-            
-            foreach (dynamic item in Inventory )
+            var table = new ConsoleTable("ID", "Name", "Level", "Description", "Attack", "Attack Speed", "Defence",
+                "Type", "Cost");
+
+            foreach (DbItems item in Inventory)
             {
-                Type itemType = item.GetType();
-                if (itemType == typeof(Weapon))
-                {
-                    table.AddRow(item.Id,item.Name,item.Attack,item.AttackSpeed,item.Defence,item.Type,item.Value);
-                } else if (itemType == typeof(Armour))
-                {
-                    table.AddRow(item.Id,item.Name, item.Attack, item.AttackSpeed, item.Defence, item.Type, item.Value);
-                }
-            
+                table.AddRow(item.Id, item.Name, item.Level, item.Description, item.Attack, item.AttackSpeed,
+                    item.Defence, item.Type, item.Value);
             }
+
             table.Write();
         }
-        public void SellItem()
-        {
 
+        public DbItems SellItem(string itemNo)
+        { 
+            if (Inventory.Exists(x => x.Id.Contains(itemNo)));
+            int x = Int32.Parse(itemNo);
+            return Inventory[x];
         }
-    
-    
     }
 }

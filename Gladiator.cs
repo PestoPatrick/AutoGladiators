@@ -1,12 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Text;
 using AutoGladiators.Interfaces;
 
 namespace AutoGladiators
 {
-    class Gladiator : IGladiator
+    
+    public class Gladiator : IGladiator
     {
+        public int GetExperience()
+        {
+            return RandomNumberGenerator.GetInt32(1,11);
+        }
+
         //attributes and abilities of a gladiator
         public string Id { get; set; }
         public int Level { get; set; }
@@ -14,6 +21,7 @@ namespace AutoGladiators
         public string Name { get; set; }
         public int Experience { get; set; }
         public int BaseHealth { get; set; }
+        public int TotalHealth { get; set; }
         public int BaseStrength { get; set; }
         public int BaseDefence { get; set; }
         public float BaseAgility { get; set; }
@@ -30,12 +38,14 @@ namespace AutoGladiators
         public Gladiator(string name)
         {
             this.Name = name;
+            this.Armour = new Armour();
+            this.BaseHealth = 10;
             this.BaseStrength = 5;
             this.BaseDefence = 5;
             this.BaseAgility = 5;
+            this.TotalHealth = this.Armour.Defence + this.BaseHealth;
             this.TotalAttack = BaseStrength;
             this.Inventory = new List<object>();
-            this.Armour = new Armour();
             this.LeftHand = null;
             this.RightHand = null;
             this.TwoHanded = null;
