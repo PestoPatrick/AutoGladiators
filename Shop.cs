@@ -35,11 +35,11 @@ namespace AutoGladiators
             table.Write();
         }
 
-        public DbItems SellItem(string itemNo)
-        { 
-            if (Inventory.Exists(x => x.Id.Contains(itemNo)));
-            int x = Int32.Parse(itemNo);
-            return Inventory[x];
+        public DbItems SellItem(int itemNo)
+        {
+            string stringChoice = itemNo.ToString();
+            if (Inventory.Exists(i => i.Id.Contains(stringChoice)));
+            return Inventory[itemNo];
         }
     }
 }

@@ -22,13 +22,13 @@
 
         float TotalAgility { get; set; }
 
-        Armour Armour { get; set; }
+        DbItems Armour { get; set; }
 
-        Weapon LeftHand { get; set; }
+        DbItems LeftHand { get; set; }
 
-        Weapon RightHand { get; set; }
+        DbItems RightHand { get; set; }
 
-        Weapon TwoHanded { get; set; }
+        DbItems TwoHanded { get; set; }
 
         void Attack(Gladiator enemy);
 
@@ -36,12 +36,12 @@
 
         void Defend();
 
-        void EquipLeft(Weapon weapon);
+        void EquipLeft(DbItems weapon);
 
-        void EquipRight(Weapon weapon);
+        void EquipRight(DbItems weapon);
 
-        void EquipTwoHanded(Weapon weapon);
+        void EquipTwoHanded(DbItems weapon);
 
-        void EquipArmour(Armour armour);
+        void EquipArmour(DbItems armour);
     }
 }

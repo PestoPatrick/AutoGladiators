@@ -4,7 +4,7 @@ using Microsoft.Data.Sqlite;
 namespace AutoGladiators
 {
     //class that handles the majority of database operations
-    public class DbOperations
+    public static class DbOperations
     {
         public static SqliteConnection CreateConnection()
         {
@@ -33,17 +33,19 @@ namespace AutoGladiators
             
             while (sqliteReader.Read())
             {
-                var row = new DbItems();
-                row.Id = sqliteReader.GetString(0);
-                row.Name = sqliteReader.GetString(1);
-                row.Level = sqliteReader.GetInt32(2);
-                row.Description = sqliteReader.GetString(3);
-                row.IsEquipped = sqliteReader.GetBoolean(4);
-                row.Type = sqliteReader.GetString(5);
-                row.Value = sqliteReader.GetInt32(6);
-                row.Attack = sqliteReader.GetInt32(7);
-                row.AttackSpeed = sqliteReader.GetFloat(8);
-                row.Defence = sqliteReader.GetInt32(9);
+                var row = new DbItems
+                {
+                    Id = sqliteReader.GetString(0),
+                    Name = sqliteReader.GetString(1),
+                    Level = sqliteReader.GetInt32(2),
+                    Description = sqliteReader.GetString(3),
+                    IsEquipped = sqliteReader.GetBoolean(4),
+                    Type = sqliteReader.GetString(5),
+                    Value = sqliteReader.GetInt32(6),
+                    Attack = sqliteReader.GetInt32(7),
+                    AttackSpeed = sqliteReader.GetFloat(8),
+                    Defence = sqliteReader.GetInt32(9)
+                };
                 values.Add(row);
             }
             sqliteConn.Close();

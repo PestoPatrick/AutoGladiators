@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 using AutoGladiators.Interfaces;
+using ConsoleTables;
+using Microsoft.VisualBasic;
 
 namespace AutoGladiators
 {
@@ -29,26 +31,27 @@ namespace AutoGladiators
         public float TotalAgility { get; set; }
         public int TotalDefence { get; set; }
         public int Money { get; set; }
-        public Armour Armour { get; set; }
-        public Weapon LeftHand { get; set; }
-        public Weapon RightHand { get; set; }
-        public Weapon TwoHanded { get; set; }
-        public List<object> Inventory { get; set; }
+        public DbItems Armour { get; set; }
+        public DbItems LeftHand { get; set; }
+        public DbItems RightHand { get; set; }
+        public DbItems TwoHanded { get; set; }
+        public List<DbItems> Inventory { get; set; }
 
         public Gladiator(string name)
         {
             this.Name = name;
-            this.Armour = new Armour();
+            this.Armour = new DbItems();
             this.BaseHealth = 10;
             this.BaseStrength = 5;
             this.BaseDefence = 5;
             this.BaseAgility = 5;
             this.TotalHealth = this.Armour.Defence + this.BaseHealth;
             this.TotalAttack = BaseStrength;
-            this.Inventory = new List<object>();
+            this.Inventory = new List<DbItems>();
             this.LeftHand = null;
             this.RightHand = null;
             this.TwoHanded = null;
+            this.Money = 5000000;
         }
         public void Attack(Gladiator enemy)
         {
@@ -65,7 +68,7 @@ namespace AutoGladiators
             throw new NotImplementedException();
         }
 
-        public void EquipLeft(Weapon weapon)
+        public void EquipLeft(DbItems weapon)
         {
             if (weapon.Type != "OneHanded") return;
             if (TwoHanded != null)
@@ -78,7 +81,7 @@ namespace AutoGladiators
             TotalAttack += weapon.Attack;
         }
 
-        public void EquipRight(Weapon weapon)
+        public void EquipRight(DbItems weapon)
         {
             if (weapon.Type != "OneHanded") return;
             if (this.TwoHanded != null)
@@ -93,7 +96,7 @@ namespace AutoGladiators
             
         }
 
-        public void EquipTwoHanded(Weapon weapon)
+        public void EquipTwoHanded(DbItems weapon)
         {
             // set the weapons to unequipped maybe not needed
             //Decrease total attack by the attack of the weapon
@@ -119,20 +122,20 @@ namespace AutoGladiators
             this.TotalAttack += weapon.Attack;
         }
 
-        public void EquipArmour(Armour armour)
+        public void EquipArmour(DbItems armour)
         {
             this.Armour = armour;
             this.TotalDefence += armour.Defence;
         }
 
-        public void UnEquipArmour(Armour armour)
+        public void UnEquipArmour(DbItems armour)
         {
             armour.IsEquipped = false;
             TotalDefence -= armour.Defence;
             TotalAgility -= armour.AttackSpeed;
         }
 
-        public void UnEquipLeftWeapon(Weapon weapon)
+        public void UnEquipLeftWeapon(DbItems weapon)
         {
             if (LeftHand == null) return;
             weapon.IsEquipped = false;
@@ -140,7 +143,7 @@ namespace AutoGladiators
             LeftHand = null;
         }
         
-        public void UnEquipRightWeapon(Weapon weapon)
+        public void UnEquipRightWeapon(DbItems weapon)
         {
             
             if (RightHand == null) return;
@@ -148,7 +151,7 @@ namespace AutoGladiators
             TotalAttack -= weapon.Attack;
             RightHand = null;
         }
-        public void UnEquipTwoHandedWeapon(Weapon weapon)
+        public void UnEquipTwoHandedWeapon(DbItems weapon)
         {
             if (TwoHanded == null) return;
             weapon.IsEquipped = false;
